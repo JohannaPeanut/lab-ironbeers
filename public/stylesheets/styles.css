@@ -5,3 +5,17 @@ dark-blue: #0a2c42;
 grey: #bfbfbf;
 font-family: Arial, Helvetica, sans-serif;
 */
+
+body {
+    margin: 0;
+    padding:0;
+}
+
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+img {
+    max-height: 100em;
+}
