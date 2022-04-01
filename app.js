@@ -23,14 +23,22 @@ app.get('/beers', (req, res) => {
   .getBeers()
   .then((response) => {
     const beers = response;
-    console.log(beers);
     res.render('beers', { beers: beers});
   })
-  .then(beersFromApi => console.log('Beers from the database: ', beersFromApi[0].name))
   .catch(error => console.log(error));
-  
-  
 });
+
+app.get('/random-beer', (req, res) => {
+  punkAPI
+  .getRandom()
+  .then((response) => {
+    const beer = response[0];
+    //console.log(beer.brewers_tips)
+    res.render('random-beer', { beer : beer });
+  })
+  .catch(error => console.log(error));
+});
+
 
 app.get('/', (req, res) => {
   res.render('index');
